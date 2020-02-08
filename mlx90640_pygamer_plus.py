@@ -1,3 +1,5 @@
+### mlx90640_pygamer_plus.py
+
 import time
 import board
 import busio
@@ -101,10 +103,8 @@ while True:
     for h in range(24):
         for w in range(32):
             t = frame[h*32 + w]
-            if t > maxi:
-                maxi = t
-            if t < mini:
-                mini = t
+            mini = min(t, mini)
+            maxi = max(t, maxi)
             image_bitmap[w, (23-h)] = int(map_range(t, min_t, max_t, 0, last_color ))
 
     min_label.text="%0.2f" % (min_t)
