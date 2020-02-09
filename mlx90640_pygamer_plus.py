@@ -45,16 +45,24 @@ for i in range(number_of_colors):
     scale_bitmap[i, 0] = i            # Fill the scale with the palette gradian
 
 # Create the super Group
-group = displayio.Group()
+group = displayio.Group(max_size = 8)
 
 min_label = Label(terminalio.FONT, max_glyphs=10, color=palette[0], x = 0, y = 110)
+center_label = Label(terminalio.FONT, max_glyphs=10, color=palette[int(number_of_colors/2)], x = 48, y = 110)
 max_label = Label(terminalio.FONT, max_glyphs=10, color=palette[last_color], x = 80, y = 110)
+
+# Indicator for the minimum and maximum location
+o_label = Label(terminalio.FONT, max_glyphs = 1, text = "O", color = 0, x = 0, y = 0)
+x_label = Label(terminalio.FONT, max_glyphs = 1, text = "X", color = 0, x = 0, y = 0)
 
 # Add all the sub-group to the SuperGroup
 group.append(image_group)
 group.append(scale_group)
 group.append(min_label)
+group.append(center_label)
 group.append(max_label)
+group.append(o_label)
+group.append(x_label)
 
 # Add the SuperGroup to the Display
 board.DISPLAY.show(group)
@@ -84,18 +92,43 @@ while True:
     mini = frame[0]       # Define a min temperature of current image
     maxi = frame[0]       # Define a max temperature of current image
 
+    minx = 0
+    miny = 0
+    maxx = 23
+    maxy = 31
+
     for h in range(24):
         for w in range(32):
             t = frame[h*32 + w]
-            mini = min(t, mini)
-            maxi = max(t, maxi)
+            if t < mini:
+                mini = t
+                minx = w
+                miny = h
+            if t > maxi:
+                maxi = t
+                maxx = w
+                maxy = h
             image_bitmap[w, (23-h)] = int(map_range(t, min_t, max_t, 0, last_color ))
 
+    # min and max temperature indicator
     min_label.text="%0.2f" % (min_t)
-
     max_string="%0.2f" % (max_t)
     max_label.x=120-(5*len(max_string))      # Tricky calculation to left align
     max_label.text=max_string
+
+    # Compute average_center temperature of the middle of sensor and convert to palette color
+    center_average = (frame[11*32 + 15] + frame[12*32 + 15] + frame[11*32 + 16] + frame[12*32 + 16]) / 4
+    center_color = int(map_range(center_average, min_t, max_t, 0, last_color ))
+    center_label.text = "%0.2f" % (center_average)
+    center_label.color = palette[center_color]
+
+    # Set the location of X for lowest temperature
+    x_label.x = maxx * 4
+    x_label.y = (23-maxy) * 4
+
+    # Set the location of O for highest temperature
+    o_label.x = minx * 4
+    o_label.y = (23-miny) * 4
 
     min_t = mini                  # Automatically change the color scale
     max_t = maxi
