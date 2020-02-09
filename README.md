@@ -5,7 +5,7 @@ Enhanced version of thermal camera example with PyGamer and MLX90640
 I wrote mlx90640_pygamer.py based on mlx90640_simpletest.py from https://github.com/adafruit/Adafruit_CircuitPython_MLX90640
 And the example code is advertised on this learn guide from @adafruit: https://learn.adafruit.com/adafruit-mlx90640-ir-thermal-camera/circuitpython-thermal-camera
 
-Improuvement already implemented:
+Improvement already implemented:
 * Compute and display the average temperature of the center of the sensor
 * Indicate the lowest pixel with an O
 * Indicate the highest pixel with an X
