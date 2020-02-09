@@ -52,8 +52,8 @@ center_label = Label(terminalio.FONT, max_glyphs=10, color=palette[int(number_of
 max_label = Label(terminalio.FONT, max_glyphs=10, color=palette[last_color], x = 80, y = 110)
 
 # Indicator for the minimum and maximum location
-o_label = Label(terminalio.FONT, max_glyphs = 1, text = "O", color = 0, x = 0, y = 0)
-x_label = Label(terminalio.FONT, max_glyphs = 1, text = "X", color = 0, x = 0, y = 0)
+o_label = Label(terminalio.FONT, max_glyphs = 1, text = "o", color = 0xFFFFFF, x = 0, y = 0)
+x_label = Label(terminalio.FONT, max_glyphs = 1, text = "x", color = 0xFFFFFF, x = 0, y = 0)
 
 # Add all the sub-group to the SuperGroup
 group.append(image_group)
