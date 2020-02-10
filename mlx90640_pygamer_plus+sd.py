@@ -150,12 +150,12 @@ while True:
 
     if counter == 30 :
         print('Taking Picture...')
-        save_pixels('/sd/picture.bmp', image_bitmap, palette)
+        save_pixels('/sd/picture2.bmp', image_bitmap, palette)
         print('Picture taken')
 
     if counter == 60 :
         print('Taking Screenshot...')
-        save_pixels('/sd/screen.bmp')
+        save_pixels('/sd/screen2.bmp')
         print('Screenshot taken')
 
 
