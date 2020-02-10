@@ -27,4 +27,5 @@ I believe there is a bug in save_pixels from adafruit_bitmapsaver as the screen.
 1) The last column of pixel from the picture are duplicated to the edge.
 2) The three temperature (min, center, max) are not text but colour blob.
 
+Created a 'fake_mlx90640_pygamer+sd.py' that expose the bug on a PyGamer, without the need of a mlx90640. And this produce the picture2.bmp and screen2.bmp.
 
