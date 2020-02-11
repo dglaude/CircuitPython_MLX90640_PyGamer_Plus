@@ -1,6 +1,21 @@
 # CircuitPython_MLX90640_PyGamer_Plus
 Enhanced version of thermal camera example with PyGamer and MLX90640
 
+(((
+mlx90640_clue.py is based on mlx90640_pygamer_plus.py but for CLUE rather than PyGamer...
+
+So this is scaled to fit on a 240x240 screen.
+
+It require the following library:
+* adafruit_bus_device
+* adafruit_display_text
+* adafruit_fancyled
+* adafruit_mlx90640.mpy
+* simpleio.mpy
+
+This currently does not match the name of this repository...
+Maybe I will have to reorganise things.
+)))
 
 I wrote mlx90640_pygamer.py based on mlx90640_simpletest.py from https://github.com/adafruit/Adafruit_CircuitPython_MLX90640
 And the example code is advertised on this learn guide from @adafruit: https://learn.adafruit.com/adafruit-mlx90640-ir-thermal-camera/circuitpython-thermal-camera
