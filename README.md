@@ -37,15 +37,27 @@ Improvement already implemented:
 * Indicate the lowest pixel with an O
 * Indicate the highest pixel with an X
 * Use existing FancyLED library rather than the gradiant code
+* PyPortal version that accomodate the bigger screen
 
 Possible improvement not implemented yet:
-* Make a PyPortal version that accomodate the bigger screen
-* Use the button and joystic from the PyGamer to provide a user interface and a few feature:
+* Use the button and joystic from the PyGamer
+* Use the touch screen of PyPortal
+* Use button of CLUE
+... to provide a user interface and a few feature:
    * freeze / unfreeze the screen
-   * save the image on an SD card ( https://learn.adafruit.com/saving-bitmap-screenshots-in-circuitpython )
    * enable / disable 
-   * switch between auto-scale and manual scale with lowest / highest temperature
-   * [require AirLift Feather Wing] send image over wifi (not even a clue on how to do that)
+   * switch between auto-scale and manual scale with lowest/highest temperature
+   * compute/display average temperature
+   * generate a temperature histogram rather that image
+
+For PyGamer and PyPortal that have an SD card reader:
+   * save the image on an SD card ( https://learn.adafruit.com/saving-bitmap-screenshots-in-circuitpython )
+
+For PyPortal or PyGamer with AirLift Feather wing:
+   * try sending image over wifi (I don't know how to do that)
+
+For Clue:
+   * try sending image over BLE (to what device?)
 
 ---
 
