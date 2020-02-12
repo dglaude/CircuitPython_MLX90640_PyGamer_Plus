@@ -1,32 +1,36 @@
-# CircuitPython_MLX90640_PyGamer_Plus
+# CircuitPython_MLX90640_DisplayIO
+
 Enhanced version of thermal camera example with PyGamer and MLX90640
 
-(((
+I wrote mlx90640_pygamer.py based on mlx90640_simpletest.py from https://github.com/adafruit/Adafruit_CircuitPython_MLX90640
+And the example code is advertised on this learn guide from @adafruit: https://learn.adafruit.com/adafruit-mlx90640-ir-thermal-camera/circuitpython-thermal-camera
 
-mlx90640_clue.py is based on mlx90640_pygamer_plus.py but for CLUE rather than PyGamer...
+The various version here are derived from this original version.
 
-So this is scaled to fit on a 240x240 screen.
+mlx90640_scale.py should work on various size of DisplayIO screen.
+This should be used with the right scaling for screen.
 
-It require the following library:
+Working values of scale_factor start at 3, below this value the text overlap.
+For CLUE, the recommended scale is 6.
+For PyGamer, the recommended scale is 4.
+For PyPortal, the maximum scale is 9.
+For PyPortal Titano, the optimal sclae is untested.
+
+It does require at minimum the following library:
 * adafruit_bus_device
 * adafruit_display_text
 * adafruit_fancyled
 * adafruit_mlx90640.mpy
 * simpleio.mpy
 
-This currently does not match the name of this repository...
-Maybe I will have to reorganise things.
+The following version might disapear in the future:
+* PyPortal: mlx90640_pyportal.py
+* PyGamer: mlx90640_pygamer_plus.py
+* CLUE: mlx90640_clue.py
 
-)))
+For interactive version, the input need to be adapted to the control or touch scscreen of each board. So those require additional changea and not only the scale_factor.
 
-And now I have a PyPortal version of the thermal camera: mlx90640_pyportal.py
-
-This will require some refactoring to more quickly adapt to various resolution.
-Because I have issues with taking a screen capture, I did not add the SD function.
-
-
-I wrote mlx90640_pygamer.py based on mlx90640_simpletest.py from https://github.com/adafruit/Adafruit_CircuitPython_MLX90640
-And the example code is advertised on this learn guide from @adafruit: https://learn.adafruit.com/adafruit-mlx90640-ir-thermal-camera/circuitpython-thermal-camera
+Feature to be able to save the image will only be implemented on PyGamer and PyPortal as other do not have and SD card build in.
 
 Improvement already implemented:
 * Compute and display the average temperature of the center of the sensor
@@ -42,6 +46,10 @@ Possible improvement not implemented yet:
    * enable / disable 
    * switch between auto-scale and manual scale with lowest / highest temperature
    * [require AirLift Feather Wing] send image over wifi (not even a clue on how to do that)
+
+---
+
+Because I have issues with taking a screen capture, I did not add the SD function.
 
 mlx90640_pygamer_plus+sd.py now record the 32*24 bitmap after 30 frames and the full screen after 60 frames.
 This produce the picture.bmp and screen.bmp.
