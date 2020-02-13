@@ -11,17 +11,15 @@ Working values of scale_factor start at 3, below this value the text overlap.
 For CLUE, the recommended scale is 6 or 7.
 For PyGamer, the recommended scale is 4.
 For PyPortal, the recommended scale is 8 or 9.
-For PyPortal Titano, the optimal scale is untested.
+For PyPortal Titano, the optimal scale is unteste, I guess 12 is OK.
 
 Same code for various screen resolution of famous board:
 * mlx90640_scale_clue.py
 * mlx90640_scale_pygamer.py
 * mlx90640_scale_pyportal.py
 
-Looking for someone that could test this code on a PyPortal Titano:
-* mlx90640_scale_nomlx.py
-
-Please tell me what is the right scaling factor to apply for that screen resolution.
+I am looking for someone that could test this code on a PyPortal Titano and suggest a scaling_factor to use, it does not require an mlx90640, all reference to it has been removed and fake data is provided:
+* nomlx_scale_pyportal_titano.py
 
 It does require at minimum the following library:
 * adafruit_bus_device
