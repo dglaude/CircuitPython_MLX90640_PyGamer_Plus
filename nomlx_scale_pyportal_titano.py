@@ -1,4 +1,4 @@
-### mlx90640_scale.py
+### nomlx_scale_pyportal_titano.py
 
 import time
 import board
@@ -11,7 +11,7 @@ from simpleio import map_range
 import adafruit_fancyled.adafruit_fancyled as fancy
 
 # On PyPortal, the scale factor works from 3 to 9
-scale_factor = 4
+scale_factor = 12 
 text_x = (32 * scale_factor) - 30
 text_y = (24 * scale_factor) + 8
 
