@@ -1,4 +1,4 @@
-### mlx90640_pyportal_plus.py
+### mlx90640_scale_pyportal.py
 
 import time
 import board

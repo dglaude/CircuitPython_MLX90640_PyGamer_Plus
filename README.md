@@ -5,16 +5,23 @@ Enhanced version of thermal camera example with PyGamer and MLX90640
 I wrote mlx90640_pygamer.py based on mlx90640_simpletest.py from https://github.com/adafruit/Adafruit_CircuitPython_MLX90640
 And the example code is advertised on this learn guide from @adafruit: https://learn.adafruit.com/adafruit-mlx90640-ir-thermal-camera/circuitpython-thermal-camera
 
-The various version here are derived from this original version.
-
-mlx90640_scale.py should work on various size of DisplayIO screen.
-This should be used with the right scaling for screen.
+There are various version of mlx90640_scale_* for various size of DisplayIO screen. This should be used with the right scaling for screen and maybe the right refresh frequency.
 
 Working values of scale_factor start at 3, below this value the text overlap.
-For CLUE, the recommended scale is 6.
+For CLUE, the recommended scale is 6 or 7.
 For PyGamer, the recommended scale is 4.
-For PyPortal, the maximum scale is 9.
-For PyPortal Titano, the optimal sclae is untested.
+For PyPortal, the recommended scale is 8 or 9.
+For PyPortal Titano, the optimal scale is untested.
+
+Same code for various screen resolution of famous board:
+* mlx90640_scale_clue.py
+* mlx90640_scale_pygamer.py
+* mlx90640_scale_pyportal.py
+
+Looking for someone that could test this code on a PyPortal Titano:
+* mlx90640_scale_nomlx.py
+
+Please tell me what is the right scaling factor to apply for that screen resolution.
 
 It does require at minimum the following library:
 * adafruit_bus_device
@@ -71,4 +78,7 @@ I believe there is a bug in save_pixels from adafruit_bitmapsaver as the screen.
 2) The three temperature (min, center, max) are not text but colour blob.
 
 Created a 'fake_mlx90640_pygamer+sd.py' that expose the bug on a PyGamer, without the need of a mlx90640. And this produce the picture2.bmp and screen2.bmp.
+
+mlx90640_pygamer_plus+sd.py
+mlx90640_pygamer_plus.py
 
