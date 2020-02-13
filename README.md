@@ -30,11 +30,6 @@ It does require at minimum the following library:
 * adafruit_mlx90640.mpy
 * simpleio.mpy
 
-The following version might disapear in the future:
-* PyPortal: mlx90640_pyportal.py
-* PyGamer: mlx90640_pygamer_plus.py
-* CLUE: mlx90640_clue.py
-
 For interactive version, the input need to be adapted to the control or touch scscreen of each board. So those require additional changea and not only the scale_factor.
 
 Feature to be able to save the image will only be implemented on PyGamer and PyPortal as other do not have and SD card build in.
