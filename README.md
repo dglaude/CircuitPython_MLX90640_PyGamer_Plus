@@ -39,7 +39,10 @@ Improvement already implemented:
 * Indicate the lowest pixel with an O
 * Indicate the highest pixel with an X
 * Use existing FancyLED library rather than the gradiant code
-* PyPortal version that accomodate the bigger screen
+* Scalable version that can simply be adapted to various board
+  * PyPortal version that accomodate the bigger screen
+  * PyGamer version based on the scalable version
+  * CLUE version that accomodate 240*240 screen resolution
 
 Possible improvement not implemented yet:
 * Use the button and joystic from the PyGamer
